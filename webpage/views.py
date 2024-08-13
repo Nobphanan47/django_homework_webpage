@@ -11,7 +11,16 @@ def contact(request):
     return render(request, 'contact.html')
 
 def card_color(request):
-    return render(request, 'card_color.html')
+    context = {
+        'color': 'all',
+    }
+
+    if request.method == "GET":
+        color = request.GET.get('color')
+        if color is not None:
+            context['color'] = color
+        
+    return render(request, 'card_color.html', context)
 
 def cardPage(request):
     cards = []
