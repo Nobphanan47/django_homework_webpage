@@ -1,8 +1,10 @@
 from django.urls import path
-from webpage.views import index, about, contact
+from . import views
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('about/', about, name='about'),
-    path('contact/', contact, name='contact')
+    path("", views.index, name="index"),
+    path("about/", views.about, name="about"),
+    path("contact/", views.contact, name='contact'),
+    path("card_color/", views.card_color, name='card_color'),
+    path("card/", views.cardPage, name='card'),
 ]
